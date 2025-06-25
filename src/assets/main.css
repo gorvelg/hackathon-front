@@ -19,6 +19,12 @@
     letter-spacing: 1.2px;
     font-size: 24px;
 }
+.heading-1{
+    font-family: 'Blogh', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 50px;
+}
 body{
     font-family: 'Montserrat', sans-serif;
 }

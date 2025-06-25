@@ -5,15 +5,15 @@
         <RouterLink to="/">Polygone's</RouterLink>
       </div>
       <div  class="flex gap-4">
-          <RouterLink to="/report" class="flex-shrink-0">Signalements</RouterLink>
-          <RouterLink to="/" class="flex-shrink-0">ActuVerte</RouterLink>
+          <RouterLink :to="{name:'report'}" class="flex-shrink-0">Signalements</RouterLink>
+          <RouterLink :to="{name: 'blog'}" class="flex-shrink-0">ActuVerte</RouterLink>
           <RouterLink to="/" class="flex-shrink-0">Forum</RouterLink>
       </div>
       <div class="" v-if="isLoggedIn">
         <button @click="logout">Se déconnecter</button>
       </div>
       <div class="" v-else>
-        <RouterLink to="/login" class="flex-shrink-0">Connexion/Inscription</RouterLink>
+        <RouterLink :to="{name: 'login'}" class="flex-shrink-0">Connexion/Inscription</RouterLink>
       </div>
     </ul>
   </header>

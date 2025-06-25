@@ -1,12 +1,14 @@
 <template>
-  <div
-      class="min-h-screen flex items-center justify-center px-4 py-12 bg-login">
+  <div class="min-h-screen flex items-center justify-center px-4 py-12 bg-login relative">
     <div class="absolute inset-0 z-1 bg-[#003787] opacity-25"></div>
+
     <form
-        @submit.prevent="login"
-        class="w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow p-6 space-y-5 z-2"
+        @submit.prevent="register"
+        class="w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow p-6 space-y-5 z-2 relative"
     >
-      <h1 class="text-2xl font-bold text-center text-[#003787]">Connexion</h1>
+      <h1 class="text-2xl font-bold text-center text-[#003787]">Inscription</h1>
+
+
 
       <div>
         <label for="email" class="block text-left font-medium mb-1 text-gray-700">Email</label>
@@ -21,9 +23,7 @@
       </div>
 
       <div>
-        <label for="password" class="block text-left font-medium mb-1 text-gray-700"
-        >Mot de passe</label
-        >
+        <label for="password" class="block text-left font-medium mb-1 text-gray-700">Mot de passe</label>
         <input
             id="password"
             v-model="password"
@@ -38,13 +38,13 @@
           type="submit"
           class="w-full bg-[#3781B0] text-white py-2 rounded-full hover:bg-[#3378a3] transition"
       >
-        Se connecter
+        Créer un compte
       </button>
 
       <p class="text-sm text-center text-gray-600">
-        Pas encore inscrit ?
-        <router-link to="/register" class="text-[#003787] underline hover:text-[#0054d1]">
-          Créer un compte
+        Déjà un compte ?
+        <router-link to="/login" class="text-[#003787] underline hover:text-[#0054d1]">
+          Se connecter
         </router-link>
       </p>
     </form>
@@ -54,26 +54,38 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { loginUser } from '@/services/api.js'
-import { useSession } from '@/stores/session.js'
+import { useSession } from '@/stores/session'
+import { api, loginUser } from '@/services/api'
 
 const email = ref('')
 const password = ref('')
 const router = useRouter()
 const session = useSession()
 
-const login = async () => {
+const register = async () => {
   try {
+    await api('/api/user/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+      }),
+    })
+
     const token = await loginUser(email.value, password.value)
 
     session.login({ token })
     router.push('/')
   } catch (err) {
-    alert(err.message)
+    alert('Erreur : ' + err.message)
   }
 }
 </script>
 
 <style scoped>
-/* Tu peux ajouter des animations ou ajustements ici si besoin */
+.bg-login {
+  background-image: url('@/assets/img/wp_login.jpg');
+  background-size: cover;
+  background-position: center;
+}
 </style>

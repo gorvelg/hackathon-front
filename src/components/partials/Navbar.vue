@@ -1,14 +1,19 @@
 <template>
-  <header class="bg-[#8C9F82] text-white shadow-lg">
-    <ul class="flex justify-between">
-      <div class="p-4">
-        <RouterLink to="/" class="flex-shrink-0">Signalements</RouterLink>
+  <header class="bg-[#003787] text-white shadow-lg absolute inset-x-0 top-0 z-9999">
+    <ul class="flex justify-between items-center p-4">
+      <div class="heading">
+        <RouterLink to="/">Polygone's</RouterLink>
       </div>
-      <div class="p-4" v-if="isLoggedIn">
+      <div  class="flex gap-4">
+          <RouterLink to="/report" class="flex-shrink-0">Signalements</RouterLink>
+          <RouterLink to="/" class="flex-shrink-0">ActuVerte</RouterLink>
+          <RouterLink to="/" class="flex-shrink-0">Forum</RouterLink>
+      </div>
+      <div class="" v-if="isLoggedIn">
         <button @click="logout">Se déconnecter</button>
       </div>
-      <div class="p-4" v-else>
-        <RouterLink to="/login" class="flex-shrink-0">Se connecter</RouterLink>
+      <div class="" v-else>
+        <RouterLink to="/login" class="flex-shrink-0">Connexion/Inscription</RouterLink>
       </div>
     </ul>
   </header>

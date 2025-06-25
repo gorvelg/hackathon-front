@@ -2,7 +2,7 @@
   <!-- Bouton pour ouvrir le modal -->
   <div
       @click="openModal"
-      class="cursor-pointer fixed bottom-8 right-8 rounded-full bg-[#8C9F82] text-white flex border-2 border-white h-12 w-12 justify-center items-center p-4 shadow-lg z-[9999]"
+      class="cursor-pointer fixed bottom-8 right-8 rounded-full bg-[#3781B0] text-white flex border-2 border-white h-12 w-12 justify-center items-center p-4 shadow-lg z-[9999]"
   >
     <font-awesome-icon icon="flag" />
   </div>
@@ -36,20 +36,6 @@
         />
       </div>
 
-      <div>
-        <label class="block text-left font-medium mb-1 text-gray-700">Type</label>
-        <select
-            v-model="report.type"
-            class="w-full h-10 px-3 border border-gray-300 rounded-lg text-sm"
-            required
-        >
-          <option disabled value="">Sélectionner un type</option>
-          <option>Nid-de-poule</option>
-          <option>Lampadaire</option>
-          <option>Voirie</option>
-          <option>Autre</option>
-        </select>
-      </div>
 
       <div>
         <label class="block text-left font-medium mb-1 text-gray-700">Localisation</label>
@@ -81,7 +67,7 @@
   </div>
 
   <!-- Carte -->
-  <div id="map"></div>
+  <div id="map" class="min-h-screen w-full"></div>
 </template>
 
 <script setup>
@@ -92,7 +78,6 @@ import { api } from "@/services/api.js"
 
 const report = ref({
   title: '',
-  type: '',
   location: '',
   description: '',
   lat: '',
@@ -153,7 +138,6 @@ const submitReport = async () => {
 
     report.value = {
       title: '',
-      type: '',
       location: '',
       description: '',
       lat: '',
@@ -207,8 +191,5 @@ onMounted(async () => {
 </script>
 
 <style>
-#map {
-  height: calc(100vh - 56px);
-  width: 100%;
-}
+
 </style>

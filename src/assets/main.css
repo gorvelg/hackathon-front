@@ -1,2 +1,30 @@
 @import './base.css';
+@font-face {
+    font-family: 'Blogh';
+    src: url('@/assets/fonts/Blogh.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('@/assets/fonts/Montserrat-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.heading{
+    font-family: 'Blogh', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 24px;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg-login {
+    background-image: url('@/assets/img/wp_login.jpg');
+    background-size: cover;
+    background-position: center;
+}

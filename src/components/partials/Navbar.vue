@@ -7,7 +7,7 @@
       <div  class="flex gap-4">
           <RouterLink :to="{name:'report'}" class="flex-shrink-0">Signalements</RouterLink>
           <RouterLink :to="{name: 'blog'}" class="flex-shrink-0">ActuVerte</RouterLink>
-          <RouterLink to="/" class="flex-shrink-0">Forum</RouterLink>
+          <RouterLink :to="{name: 'forum'}" class="flex-shrink-0">Forum</RouterLink>
       </div>
       <div class="" v-if="isLoggedIn">
         <button @click="logout">Se déconnecter</button>

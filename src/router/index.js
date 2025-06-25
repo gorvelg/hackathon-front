@@ -5,6 +5,7 @@ import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView.vue";
 import BlogView from "@/views/BlogView.vue";
 import ArticleView from "@/views/ArticleView.vue";
+import ForumView from "@/views/ForumView.vue";
 
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
         path: '/blog/:slug',
         name: 'article',
         component: ArticleView,
+    },
+    {
+        path: '/forum',
+        name: 'forum',
+        component: ForumView,
     },
 ]
 

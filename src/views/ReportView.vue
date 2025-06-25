@@ -7,6 +7,19 @@
     <font-awesome-icon icon="flag" />
   </div>
 
+  <button
+      @click="openModal"
+      class="group absolute cursor-pointer fixed bottom-8 right-8 flex items-center justify-center overflow-hidden rounded-full bg-[#3781B0] text-white px-4 h-12 transition-all duration-300 shadow-lg z-[9999]"
+  >
+    <font-awesome-icon icon="flag" class="text-xl transition-transform duration-300" />
+
+    <span
+        class="group-hover:ml-2 whitespace-nowrap opacity-0 max-w-0 group-hover:max-w-xs group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden"
+    >
+      Signaler un événement
+    </span>
+  </button>
+
   <!-- Modal de signalement -->
   <div
       v-if="isOpenModal"

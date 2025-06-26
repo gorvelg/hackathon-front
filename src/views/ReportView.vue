@@ -220,6 +220,11 @@ const submitReport = async () => {
       }
     }
 
+    map.value.flyTo([coords[0], coords[1]], 16, {
+      animate: true,
+      duration: 1.5
+    })
+
     isOpenModal.value = false
     showFlashMessage('Le signalement a bien été envoyé.')
   } catch (error) {

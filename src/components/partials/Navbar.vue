@@ -5,15 +5,15 @@
         <RouterLink to="/">Polygone's</RouterLink>
       </div>
       <div  class="flex gap-4">
-          <RouterLink :to="{name:'report'}" class="flex-shrink-0">Signalements</RouterLink>
-          <RouterLink :to="{name: 'blog'}" class="flex-shrink-0">ActuVerte</RouterLink>
-          <RouterLink :to="{name: 'forum'}" class="flex-shrink-0">Forum</RouterLink>
+          <RouterLink :to="{name:'report'}" active-class="font-bold text-[#a8cbff]" class="flex-shrink-0">Signalements</RouterLink>
+          <RouterLink :to="{name: 'blog'}" active-class="font-bold text-[#a8cbff]" class="flex-shrink-0">ActuVerte</RouterLink>
+          <RouterLink :to="{name: 'forum'}" active-class="font-bold text-[#a8cbff]" class="flex-shrink-0">Forum</RouterLink>
       </div>
       <div class="" v-if="isLoggedIn">
         <button @click="logout">Se déconnecter</button>
       </div>
       <div class="" v-else>
-        <RouterLink :to="{name: 'login'}" class="flex-shrink-0">Connexion/Inscription</RouterLink>
+        <RouterLink :to="{name: 'login'}" active-class="font-bold text-[#a8cbff]" class="flex-shrink-0">Connexion/Inscription</RouterLink>
       </div>
     </ul>
   </header>
@@ -30,4 +30,6 @@ const logout = () => {
   session.logout();
   router.push('/login');
 }
+
+
 </script>

@@ -1,6 +1,6 @@
 <template>
   <section class="min-h-screen container mx-auto pt-20 pb-16">
-    <h1 class="heading-1 text-[#003787]">Les dernières ActuVertes !</h1>
+    <h1 class="heading-1 text-[#003787]">Les dernières Actu<span class="text-[#87B738]">Vertes</span> !</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <Card
           v-for="content in contents"

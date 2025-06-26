@@ -72,7 +72,7 @@
 
       <button
           type="submit"
-          class="w-full bg-[#2D2D2D] text-white py-2 rounded-full hover:bg-black transition"
+          class="w-full bg-[#003787] hover:bg-[#002b6b]  text-white py-2 rounded-full hover:bg-black transition"
       >
         Envoyer le signalement
       </button>

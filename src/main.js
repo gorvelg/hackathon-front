@@ -7,9 +7,9 @@ import { createPinia } from 'pinia'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser, faMapMarkerAlt, faFlag } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faMapMarkerAlt, faFlag, faMessage} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUser, faMapMarkerAlt, faFlag)
+library.add(faUser, faMapMarkerAlt, faFlag, faMessage)
 
 const app = createApp(App)
 const pinia = createPinia()

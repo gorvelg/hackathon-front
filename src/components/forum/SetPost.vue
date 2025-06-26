@@ -1,9 +1,8 @@
 <template>
-  <div
-      v-if="isOpen"
-      class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]"
-  >
+  <div v-if="isOpen" class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]">
+    <!-- Si connecté, afficher le formulaire -->
     <form
+        v-if="isLoggedIn"
         @submit.prevent="submitPost"
         class="w-full lg:w-1/2 bg-white shadow-md border border-gray-200 rounded-xl p-6 space-y-5 mt-8 sm:mt-20 mb-20 relative"
     >
@@ -39,17 +38,34 @@
 
       <button
           type="submit"
-          class="w-full bg-[#003787] hover:bg-[#002b6b]  text-white py-2 rounded-full transition"
+          class="w-full bg-[#003787] hover:bg-[#002b6b] text-white py-2 rounded-full transition"
       >
         Envoyer le message
       </button>
     </form>
+
+    <!-- Si non connecté, message d'information -->
+    <div
+        v-else
+        class="w-full max-w-md bg-white text-center p-6 rounded-xl shadow border border-gray-200 text-gray-700"
+    >
+      <p class="mb-4">Vous devez être connecté pour poster un message.</p>
+      <button
+          @click="emit('close')"
+          class="bg-[#003787] hover:bg-[#002b6b] text-white px-4 py-2 rounded-full transition"
+      >
+        Fermer
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, defineProps, defineEmits } from 'vue'
+import { ref, defineProps, defineEmits, computed } from 'vue'
+import { useSession } from '@/stores/session.js'
 
+const session = useSession()
+const isLoggedIn = computed(() => !!session.token)
 
 const props = defineProps({
   isOpen: {

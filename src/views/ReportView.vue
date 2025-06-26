@@ -234,7 +234,7 @@ const submitReport = async () => {
 }
 
 onMounted(async () => {
-  map.value = L.map('map').setView([48.29752, 4.07471], 13)
+  map.value = L.map('map').setView([45.7868175, 4.7958134], 16)
 
   await fetchReports()
 

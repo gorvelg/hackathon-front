@@ -118,6 +118,9 @@ import 'leaflet/dist/leaflet.css'
 import { api } from '@/services/api.js'
 import { useSession } from '@/stores/session.js'
 
+import markerIcon from '@/assets/img/marker-icon.png'
+import markerShadow from '@/assets/img/marker-shadow.png'
+
 const session = useSession()
 const isLoggedIn = computed(() => !!session.token)
 
@@ -254,6 +257,19 @@ onMounted(async () => {
     console.log('coordonnées', e.latlng)
   })
 })
+
+delete L.Icon.Default.prototype._getIconUrl
+
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon,
+  iconRetinaUrl: markerIcon,
+  shadowUrl: markerShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+})
+
 </script>
 
 <style>

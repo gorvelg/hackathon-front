@@ -27,14 +27,14 @@
     <!-- Bouton pour ouvrir le modal -->
     <div
         @click="openModal"
-        class="cursor-pointer fixed bottom-8 right-8 rounded-full bg-[#3781B0] text-white flex border-2 border-white h-12 w-12 justify-center items-center p-4 shadow-lg z-[9999]"
+        class="cursor-pointer fixed top-8 md:top-auto md:bottom-8 right-4 md:right-8 rounded-full bg-[#3781B0] text-white flex border-2 border-white h-12 w-12 justify-center items-center p-4 shadow-lg z-[9999]"
     >
       <font-awesome-icon icon="message" />
     </div>
 
     <button
         @click="openModal"
-        class="group absolute cursor-pointer fixed bottom-8 right-8 flex items-center justify-center overflow-hidden rounded-full bg-[#3781B0] text-white px-4 h-12 transition-all duration-300 shadow-lg z-[9999]"
+        class="group absolute cursor-pointer fixed top-8 md:top-auto md:bottom-8 right-4 md:right-8 flex items-center justify-center overflow-hidden rounded-full bg-[#3781B0] text-white px-4 h-12 transition-all duration-300 shadow-lg z-[9999]"
     >
       <font-awesome-icon icon="message" class="text-xl transition-transform duration-300" />
 

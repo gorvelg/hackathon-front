@@ -14,7 +14,7 @@
   <!-- Bouton pour ouvrir le modal -->
   <button
       @click="openModal"
-      class="group fixed bottom-8 right-8 flex items-center justify-center overflow-hidden rounded-full bg-[#3781B0] text-white px-4 h-12 transition-all duration-300 shadow-lg z-[9999]"
+      class="group fixed top-8 md:top-auto md:bottom-8 right-4 md:right-8 flex items-center justify-center overflow-hidden rounded-full bg-[#3781B0] text-white px-4 h-12 transition-all duration-300 shadow-lg z-[9999]"
   >
     <svg
         class="text-xl transition-transform duration-300"

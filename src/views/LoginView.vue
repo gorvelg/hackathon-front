@@ -15,7 +15,7 @@
             v-model="email"
             type="email"
             placeholder="Ex: john.doe@example.com"
-            class="w-full h-11 px-4 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#5E844B]"
+            class="w-full h-11 px-4 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#003787]"
             required
         />
       </div>
@@ -29,7 +29,7 @@
             v-model="password"
             type="password"
             placeholder="••••••••"
-            class="w-full h-11 px-4 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#5E844B]"
+            class="w-full h-11 px-4 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#003787]"
             required
         />
       </div>
@@ -67,7 +67,7 @@ const login = async () => {
     const token = await loginUser(email.value, password.value)
 
     session.login({ token })
-    router.push('/')
+    router.push('/app')
   } catch (err) {
     alert(err.message)
   }

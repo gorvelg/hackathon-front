@@ -10,7 +10,7 @@ import ForumView from "@/views/ForumView.vue";
 
 const routes = [
     {
-        path: '/',
+        path: '/app',
         name: 'home',
         component: ReportView
     },
